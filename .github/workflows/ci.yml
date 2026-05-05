@@ -1,0 +1,31 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+      - name: Test and build
+        run: |
+          cd services/tasks
+          go mod tidy
+          go test ./...
+          go build ./cmd/tasks
+  docker-build:
+    runs-on: ubuntu-latest
+    needs: test-and-build
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker image
+        run: |
+          cd services/tasks
+          docker build -t techip-tasks:${{ github.sha }} .

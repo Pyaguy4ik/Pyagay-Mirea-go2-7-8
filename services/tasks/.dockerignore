@@ -1,0 +1,16 @@
+.git
+.gitignore
+bin/
+tmp/
+*.log
+*.pid
+.idea/
+.vscode/
+*.swp
+*.swo
+Dockerfile.old
+.env
+.env.local
+.DS_Store
+README.md
+*.md
