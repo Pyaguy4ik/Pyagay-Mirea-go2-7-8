@@ -8,23 +8,98 @@
 
 ## Структура проекта
 
-tech-ip-7/
-├── .github/
-│ └── workflows/
-│ └── ci.yml # CI/CD пайплайн GitHub Actions
-├── services/
-│ └── tasks/
-│ ├── cmd/
-│ │ └── tasks/
-│ │ └── main.go # HTTP-сервис на Go
-│ ├── internal/
-│ ├── Dockerfile # Multi-stage Dockerfile
-│ ├── .dockerignore
-│ ├── go.mod
-│ └── go.sum
-├── deploy/
-│ └── docker-compose.yml # Docker Compose для локального запуска
+.
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── HEAD
+│   ├── branches
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── push-to-checkout.sample
+│   │   ├── sendemail-validate.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       ├── heads
+│   │       │   └── main
+│   │       └── remotes
+│   │           └── origin
+│   │               └── main
+│   ├── objects
+│   │   ├── 16
+│   │   │   └── 234aefc37f89854dea51d122dbdfee17d11698
+│   │   ├── 3e
+│   │   │   └── 2e2816e1aab43d7181d15c0c105644236b2f8f
+│   │   ├── 5b
+│   │   │   └── e8873faf86fdf8ab13a404ba89dab60659ff7c
+│   │   ├── 7e
+│   │   │   └── 7f6d4bcdf3a05bbbe4bbc1774bd81ab375ad72
+│   │   ├── 94
+│   │   │   ├── 8724c15e9f1fab7a320b5e86c4a0e6f934b9ce
+│   │   │   └── e96951797db816c70c57f1e421dc9963f14d76
+│   │   ├── a4
+│   │   │   └── 18d1c6ec91298587f5121dea2435367e50cdd2
+│   │   ├── b9
+│   │   │   └── 8289cd4cf2858bd19de42028a87c2294d531fa
+│   │   ├── c9
+│   │   │   └── 5f33aa2eb06d6e2fa2a07221bfae4aff4433d4
+│   │   ├── e6
+│   │   │   └── 9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+│   │   ├── e8
+│   │   │   └── a9d21efddb8cf89a664231f2f528d9553d8495
+│   │   ├── eb
+│   │   │   └── 43e8d569a9d6822344f4cb39aeb1852c66a338
+│   │   ├── ef
+│   │   │   └── c84d9010300625a86cb3ee40cbcf1f9f18c63b
+│   │   ├── f2
+│   │   │   └── 6cc42f20d00006160a267ece645cc118cc8b00
+│   │   ├── f9
+│   │   │   └── ef86e9811580afb80fdb9f28e38d05f1e915bf
+│   │   ├── fa
+│   │   │   └── 4eb842dda745518d36401947f0b9d089918441
+│   │   ├── fc
+│   │   │   └── 49427dcd99c0e15042567a46c68547feed9746
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       │   └── main
+│       ├── remotes
+│       │   └── origin
+│       │       └── main
+│       └── tags
+├── .github
+│   └── workflows
+│       └── ci.yml
 ├── .gitignore
+├── deploy
+│   └── docker-compose.yml
+└── services
+    └── tasks
+        ├── .dockerignore
+        ├── Dockerfile
+        ├── cmd
+        │   └── tasks
+        │       └── main.go
+        ├── go.mod
+        ├── go.sum
+        └── internal
 
 ---
 
