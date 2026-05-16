@@ -8,7 +8,23 @@
 
 ## Структура проекта
 
-![Структура проекта](screen/structure.png)
+tech-ip-7/
+├── .github/
+│ └── workflows/
+│ └── ci.yml # CI/CD пайплайн GitHub Actions
+├── services/
+│ └── tasks/
+│ ├── cmd/
+│ │ └── tasks/
+│ │ └── main.go # HTTP-сервис на Go
+│ ├── internal/
+│ ├── Dockerfile # Multi-stage Dockerfile
+│ ├── .dockerignore
+│ ├── go.mod
+│ └── go.sum
+├── deploy/
+│ └── docker-compose.yml # Docker Compose для локального запуска
+├── .gitignore
 
 ---
 
